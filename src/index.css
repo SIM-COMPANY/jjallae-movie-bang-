@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;900&family=Gowun+Dodum&family=Special+Elite&family=Gaegu:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif KR", serif;
+  --font-retro: "Gowun Dodum", sans-serif;
+  --font-typewriter: "Special Elite", monospace;
+  --font-handwriting: "Gaegu", cursive;
+
+  /* Semantic Colors */
+  --color-brand: #ea580c;
+  /* text-orange-600 */
+  --color-brand-light: #ffedd5;
+  /* bg-orange-100 */
+  --color-paper: #FAF6EC;
+  /* Warm cream */
+  --color-paper-subtle: #f2ebd9;
+  /* Darker cream */
+  --color-ink: #4A3F35;
+  /* Dark brown */
+  --color-ink-muted: #8c7a6b;
+  /* Muted brown */
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+}
+
+/* 종이 grain 질감 — 전체 오버레이 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.font-retro {
+  font-family: var(--font-retro);
+}
+
+.font-typewriter {
+  font-family: var(--font-typewriter);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* 에세이 뷰 배경 */
+.paper-lined {
+  background-color: var(--color-paper-subtle);
+}
+
+/* 에세이 본문 — 마진 붕괴 방지, 원고지 그리드 정렬 */
+.essay-body p:first-child {
+  font-weight: 600;
+  color: #292524;
+}
+
+.essay-body p {
+  margin: 0;
+  padding-top: 64px;
+  line-height: 32px;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+
+.essay-body p:first-child {
+  padding-top: 0;
+}
+
+.essay-body em {
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+/* 노트 질감 — 신청란 */
+.notebook-paper {
+  background-color: #fffde8;
+  background-image:
+    linear-gradient(rgba(100, 130, 200, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 100, 100, 0.18) 1px, transparent 1px);
+  background-size: 100% 24px, 40px 100%;
+  background-position: 0 0, 40px 0;
+}
+
+/* 비디오 가게 입구 — Cinematic Newtro */
+.hero-entrance {
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(circle at top right, rgba(40, 20, 10, 0.4), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(15, 20, 30, 0.6), transparent 50%);
+}
+
+/* Glassmorphism Panel */
+.glass-card {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.5),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.to-paper {
+  --tw-gradient-to: var(--color-paper) var(--tw-gradient-to-position);
+}
