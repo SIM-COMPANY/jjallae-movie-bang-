@@ -8,7 +8,7 @@ import type React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Film, PenTool, User, Tv, Menu, X, ChevronRight,
-  Bot, Star, Mail, Send
+  Bot, Mail, Send
 } from 'lucide-react';
 import { VHSTape } from './components/VHSTape';
 import { movies, Movie } from './data/movies';
@@ -237,18 +237,9 @@ export default function App() {
                     </h1>
                     {/* ratingSticker → 부제(deck) */}
                     <p className="text-sm text-white/70 font-retro mb-4">{selectedMovie.ratingSticker}</p>
-                    {/* 날짜 + 별점 */}
-                    <div className="flex items-center justify-between">
+                    {/* 날짜 */}
+                    <div className="flex items-center">
                       <span className="text-xs text-white/50 font-mono">{selectedMovie.date}</span>
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            size={10}
-                            className={i < selectedMovie.rating ? 'text-orange-400 fill-orange-400' : 'text-white/20'}
-                          />
-                        ))}
-                      </div>
                     </div>
                   </div>
 

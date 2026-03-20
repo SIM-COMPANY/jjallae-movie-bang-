@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
 
 interface VHSTapeProps {
   title: string;
@@ -32,9 +31,8 @@ export function VHSTape({ title, year, color, rating, genre, ratingSticker, onCl
             <span>{genre}</span>
           </div>
         </div>
-        <div className="flex gap-0.5 text-orange-400 shrink-0">
-          <Star size={12} fill="currentColor" />
-          <span className="text-sm font-bold ml-1 text-gray-700">{rating}</span>
+        <div className="shrink-0">
+          <span className="text-xs text-gray-400">{genre}</span>
         </div>
       </motion.div>
     );
@@ -78,11 +76,6 @@ export function VHSTape({ title, year, color, rating, genre, ratingSticker, onCl
         <div className="flex justify-between">
           <span>{year}</span>
           <span>{genre}</span>
-        </div>
-        <div className="flex gap-0.5 text-yellow-400">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} size={8} fill={i < Math.floor(rating) ? 'currentColor' : 'none'} />
-          ))}
         </div>
       </div>
 
